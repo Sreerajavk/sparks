@@ -1,0 +1,345 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    {% block title %}
+        <title>Dashboard</title>
+    {% endblock %}
+    <script src="/static/js/dashboard/jquery-1.12.4.min.js"></script>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon
+		============================================ -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <!-- Google Fonts
+		============================================ -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+    <!-- Bootstrap CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/css/dashboard/bootstrap.min.css">
+    <!-- Bootstrap CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/css/home/fontawesome-all.min.css">
+    <!-- nalika Icon CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/static/css/dashboard/nalika-icon.css">
+    <!-- owl.carousel CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/css/dashboard/owl.carousel.css">
+    <link rel="stylesheet" href="/static/css/dashboard/owl.theme.css">
+    <link rel="stylesheet" href="/static/css/dashboard/owl.transitions.css">
+    <!-- animate CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/css/dashboard/animate.css">
+    <!-- normalize CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/css/dashboard/normalize.css">
+    <!-- meanmenu icon CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/css/dashboard/meanmenu.min.css">
+    <!-- main CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/css/dashboard/main.css">
+    <!-- morrisjs CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/css/dashboard/morris.css">
+    <!-- mCustomScrollbar CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/css/dashboard/jquery.mCustomScrollbar.min.css">
+    <!-- metisMenu CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/css/dashboard/metisMenu.min.css">
+    <link rel="stylesheet" href="/static/css/dashboard/metisMenu-vertical.css">
+    <!-- calendar CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/css/dashboard/fullcalendar.min.css">
+    <link rel="stylesheet" href="/static/css/dashboard/fullcalendar.print.min.css">
+    <!-- style CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/css/dashboard/style.css">
+    <!-- responsive CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/css/dashboard/responsive.css">
+    <!-- modernizr JS
+		============================================ -->
+    <script src="/static/js/dashboard/modernizr-2.8.3.min.js"></script>
+
+</head>
+
+<body>
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<div class="left-sidebar-pro">
+    <nav id="sidebar" class="">
+        <div class="sidebar-header">
+            <a href="dashboard.html"><img class="main-logo" src="img/logo/logo.png" alt=""/></a>
+            <strong><img src="img/logo/logosn.png" alt=""/></strong>
+        </div>
+        <div class="nalika-profile">
+            <div class="profile-dtl">
+                <a href="#"><img src="{{ pic.url }}" alt=""/></a>
+                <h2><span class="min-dtn">{{ username }}</span></h2>
+            </div>
+        </div>
+        <div class="left-custom-menu-adp-wrap comment-scrollbar">
+            <nav class="sidebar-nav left-sidebar-menu-pro">
+                <ul class="metismenu" id="menu1">
+                    <li>
+                        <a href="/dashboard/manage/" aria-expanded="false"><i
+                                class="icon nalika-settings icon-wrap"></i>
+                            <span class="mini-click-non {% if request.path == '/dashboard/manage/' %}highlight{% endif %}">Analytics</span></a>
+
+
+                    </li>
+
+
+                </ul>
+
+
+            </nav>
+        </div>
+    </nav>
+</div>
+<!-- Start Welcome area -->
+<div class="all-content-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="logo-pro">
+                    <a href="dashboard.html"><img class="main-logo" src="img/logo/logo.png" alt=""/></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-advance-area">
+        <div class="header-top-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="header-top-wraper">
+                            <div class="row">
+                                <div class="col-lg-1 col-md-0 col-sm-1 col-xs-12">
+                                    <div class="menu-switcher-pro">
+                                        <button type="button" id="sidebarCollapse"
+                                                class="btn bar-button-pro header-drl-controller-btn btn-info navbar-btn">
+                                            <i class="icon nalika-menu-task"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
+                                    <div class="header-top-menu tabl-d-n hd-search-rp">
+                                        <div class="breadcome-heading">
+                                            <form role="search" class="">
+                                                <input type="text" placeholder="Search..." class="form-control">
+                                                <a href=""><i class="icon nalika-search"></i></a>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                                    <div class="header-right-info">
+                                        <ul class="nav navbar-nav mai-top-nav header-right-menu">
+                                            <li class="nav-item dropdown">
+                                            <li class="nav-item">
+                                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false"
+                                                   class="nav-link dropdown-toggle">
+
+                                                    <img src="{{ pic.url }}"
+                                                         style="width: 30px;height: 30px;border-radius: 50%;">
+                                                    <span class="admin-name">{{ username }}</span>
+                                                    <i class="icon nalika-down-arrow nalika-angle-dw"></i>
+                                                </a>
+                                                <ul role="menu"
+                                                    class="dropdown-header-top author-log dropdown-menu animated zoomIn"
+                                                    style="left: -100px;">
+
+                                                    <li><a href="#"><span
+                                                            class="icon nalika-settings author-log-ic"></span> Settings</a>
+                                                    </li>
+                                                    <li><a href="/logout/"><span
+                                                            class="icon nalika-unlocked author-log-ic"></span> Log
+                                                        Out</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu start -->
+        <div class="mobile-menu-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="mobile-menu">
+                            <nav id="dropdown">
+                                <ul class="mobile-menu-nav">
+                                    <li>
+                                        <a data-toggle="collapse" data-target="#Charts" href="#"> <i
+                                                class="icon nalika-user icon-wrap" style="margin-right: 5px;"></i>Add
+                                            Members
+
+                                            <span class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
+                                        <ul class="collapse dropdown-header-top">
+                                            <li><a href="/dashboard/add-staff/"><span
+                                                    class="mini-sub-pro {% if request.path == '/dashboard/add-staff/' %}highlight{% endif %}">Staff</span></a>
+                                            </li>
+                                            <li><a href="/dashboard/add-candidates/"><span
+                                                    class="mini-sub-pro {% if request.path == '/dashboard/add-candidates/' %}highlight{% endif %}">Candidates</span></a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="/dashboard/manage/" aria-expanded="false"><i
+                                                class="icon nalika-settings icon-wrap"></i>
+                                            <span class="mini-click-non {% if request.path == '/dashboard/manage/' %}highlight{% endif %}">Manage</span></a>
+
+
+                                    </li>
+                                    <li>
+                                        <a href="/dashboard/analytics/" aria-expanded="false"><i
+                                                class="icon nalika-analytics icon-wrap"></i>
+                                            <span class="mini-click-non {% if request.path == '/dashboard/analytics/' %}highlight{% endif %}">Analytics</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="/dashboard/overall-analytics/" aria-expanded="false"><i
+                                                class="icon nalika-bar-chart icon-wrap"></i>
+                                            <span class="mini-click-non {% if request.path == '/dashboard/overall-analytics/' %}highlight{% endif %}">Overall Analytics</span></a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="static-table-area mg-t-15" style="margin-top: 100px;" id="full_content">
+            <div class="container-fluid">
+                <div class="row" style="color: #fff;">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="sparkline8-list">
+
+                            <div class="product-status-wrap">
+                                {% csrf_token %}
+                                <input type="hidden" id="org_id" value="{{ org_id }}">
+
+                            </div>
+                            {#                        <div class="sparkline8-graph">#}
+                            <div class="static-table-list" id="full_table">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Consumer No</th>
+                                        <th>Name</th>
+                                        <th>Voltage</th>
+                                        <th>Current</th>
+                                        <th>Power factor</th>
+                                        <th>Power</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody id="table_content">
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Mobile Menu end -->
+
+
+
+
+            {% block content %}
+            {% endblock %}
+
+        </div>
+    </div>
+    {#    <script src="https://unpkg.com/@popperjs/core@^2.0.0"></script>#}
+    <script src="/static/js/dashboard/popper.js"></script>
+    <!-- jquery
+        ============================================ -->
+
+    <!-- bootstrap JS
+        ============================================ -->
+    <script src="/static/js/dashboard/bootstrap.min.js"></script>
+    <!-- wow JS
+        ============================================ -->
+    <script src="/static/js/dashboard/wow.min.js"></script>
+    <!-- price-slider JS
+        ============================================ -->
+    <script src="/static/js/dashboard/jquery-price-slider.js"></script>
+    <!-- meanmenu JS
+        ============================================ -->
+    <script src="/static/js/dashboard/jquery.meanmenu.js"></script>
+    <!-- owl.carousel JS
+        ============================================ -->
+    <script src="/static/js/dashboard/owl.carousel.min.js"></script>
+    <!-- sticky JS
+        ============================================ -->
+    <script src="/static/js/dashboard/jquery.sticky.js"></script>
+    <!-- scrollUp JS
+        ============================================ -->
+    <script src="/static/js/dashboard/jquery.scrollUp.min.js"></script>
+    <!-- mCustomScrollbar JS
+        ============================================ -->
+    <script src="/static/js/dashboard/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="/static/js/dashboard/mCustomScrollbar-active.js"></script>
+    <!-- metisMenu JS
+        ============================================ -->
+    <script src="/static/js/dashboard/metisMenu.min.js"></script>
+    <script src="/static/js/dashboard/metisMenu-active.js"></script>
+    <!-- sparkline JS
+        ============================================ -->
+    <script src="/static/js/dashboard/jquery.sparkline.min.js"></script>
+    <script src="/static/js/dashboard/jquery.charts-sparkline.js"></script>
+    <!-- calendar JS
+        ============================================ -->
+    <script src="/static/js/dashboard/moment.min.js"></script>
+    <script src="/static/js/dashboard/fullcalendar.min.js"></script>
+    <script src="/static/js/dashboard/fullcalendar-active.js"></script>
+    <!-- float JS
+        ============================================ -->
+    <script src="/static/js/dashboard/jquery.flot.js"></script>
+    <script src="/static/js/dashboard/jquery.flot.resize.js"></script>
+    <script src="/static/js/dashboard/curvedLines.js"></script>
+    <script src="/static/js/dashboard/flot-active.js"></script>
+    <!-- plugins JS
+        ============================================ -->
+    <script src="/static/js/dashboard/plugins.js"></script>
+    <!-- main JS
+        ============================================ -->
+    <script src="/static/js/dashboard/main.js"></script>
+    <script src="/static/js/dashboard/Chart.js"></script>
+    {#<script src="/static/js/dashboard/line-chart.js"></script>#}
+
+
+</body>
+
+</html>
