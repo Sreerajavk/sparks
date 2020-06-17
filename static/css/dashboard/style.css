@@ -3700,3 +3700,9 @@ th.fc-day-header.fc-widget-header {
 	color:#fff;
 }
 
+
+#box{
+	height: 100px;
+	text-align: center;
+	/*display: flex;*/
+}

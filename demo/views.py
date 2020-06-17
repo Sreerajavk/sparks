@@ -1,4 +1,4 @@
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
@@ -6,6 +6,8 @@ from django.shortcuts import render, redirect
 
 # Create your views here.
 from django.views.decorators.csrf import csrf_exempt
+
+from demo.models import UserDetails
 
 
 def home(request):
@@ -36,3 +38,31 @@ def index(request):
 
 def dashboard(request):
     return render(request , 'Dashboard.html')
+
+def admin_dashboard(request):
+
+    user_obj = UserDetails.objects.all()
+    print(user_obj)
+
+
+    return render(request, 'Admin_Dashboard.html' , {'user_obj' : user_obj})
+
+def admin_login(request):
+    if (request.method == 'POST'):
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        print(username, password)
+        u = authenticate(username=username, password=password)
+        if u and u.is_superuser:
+            login(request, u)
+            print('suceess')
+            return redirect('/admin_dashboard')
+        else:
+            pass
+
+    return render(request, 'Login.html', {})
+
+
+def logout_fn(request):
+    logout(request)
+    return redirect('/login')
