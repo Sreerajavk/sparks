@@ -37,7 +37,10 @@ def index(request):
 
 
 def dashboard(request):
-    return render(request , 'Dashboard.html')
+
+    user_obj = UserDetails.objects.get(user=request.user)
+
+    return render(request , 'Dashboard.html' , {'user_obj' : user_obj})
 
 def admin_dashboard(request):
 
@@ -66,3 +69,10 @@ def admin_login(request):
 def logout_fn(request):
     logout(request)
     return redirect('/login')
+
+
+def user_with_id(request , id):
+
+    user_obj = UserDetails.objects.get(consumer_no=id)
+
+    return  render(request , 'Dashboard.html' , {'user_obj' : user_obj})
