@@ -63,7 +63,7 @@ def admin_login(request):
         else:
             pass
 
-    return render(request, 'Login.html', {})
+    return render(request, 'Admin_Login.html', {})
 
 
 def logout_fn(request):
