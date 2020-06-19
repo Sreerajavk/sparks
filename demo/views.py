@@ -38,7 +38,7 @@ def index(request):
 
 def dashboard(request):
 
-    user_obj = UserDetails.objects.get(user=request.user)
+    user_obj = UserDetails.objects.filter(user=request.user)
 
     return render(request , 'Dashboard.html' , {'user_obj' : user_obj})
 
