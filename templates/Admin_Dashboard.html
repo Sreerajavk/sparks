@@ -240,6 +240,7 @@
 
 
                     {% for user in user_obj %}
+                        {{ user.consumber_no }}
                         <a href="/user/{{ user.consumer_no }}">
                             {% if user.status %}
                                 <div class="col-lg-4">

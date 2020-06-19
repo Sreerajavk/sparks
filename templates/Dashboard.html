@@ -253,15 +253,17 @@
 
                                     </tr>
                                     </thead>
-                                    <tbody id="table_content">
+                                    <tbody id="table_content">se
+                                    {% for user in user_obj %}
                                         <tr>
-                                            <td>{{ user_obj.consumer_no }}</td>
-                                            <td>{{ user_obj.user.first_name }} {{  user_obj.user.last_name }}</td>
-                                            <td>{{ user_obj.voltage }}</td>
-                                            <td>{{ user_obj.current }}</td>
-                                            <td>{{ user_obj.power_factor }}</td>
-                                            <td>{{ user_obj.power }}</td>
+                                            <td>{{ user.consumer_no }}</td>
+                                            <td>{{ user.user.first_name }} {{  user.user.last_name }}</td>
+                                            <td>{{ user.voltage }}</td>
+                                            <td>{{ user.current }}</td>
+                                            <td>{{ user.power_factor }}</td>
+                                            <td>{{ user.power }}</td>
                                         </tr>
+                                    {% endfor %}
                                     </tbody>
                                 </table>
                             </div>

@@ -44,11 +44,17 @@ def dashboard(request):
 
 def admin_dashboard(request):
 
-    user_obj = UserDetails.objects.all()
-    print(user_obj)
+    user_obj = User.objects.all().exclude(is_superuser=True)
+    user_list = []
+    for user in user_obj:
+        print(user.username)
+        user_details_obj = UserDetails.objects.filter(user=user).first()
+        print(user_details_obj.consumer_no)
+        user_list.append(user_details_obj)
+    print(user_list)
 
 
-    return render(request, 'Admin_Dashboard.html' , {'user_obj' : user_obj})
+    return render(request, 'Admin_Dashboard.html' , {'user_obj' : user_list})
 
 def admin_login(request):
     if (request.method == 'POST'):
@@ -73,6 +79,6 @@ def logout_fn(request):
 
 def user_with_id(request , id):
 
-    user_obj = UserDetails.objects.get(consumer_no=id)
+    user_obj = UserDetails.objects.filter(consumer_no=id)
 
     return  render(request , 'Dashboard.html' , {'user_obj' : user_obj})
